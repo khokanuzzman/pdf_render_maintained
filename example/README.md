@@ -1,6 +1,8 @@
-# pdf_render_example
+# pdf_render_maintained_example
 
-Demonstrates how to use the pdf_render plugin.
+Demonstrates how to use the pdf_render_maintained plugin.
+
+This example is part of the maintained fork of the original pdf_render package by espresso3389.
 
 ## Getting Started
 

@@ -1,15 +1,15 @@
-group 'jp.espresso3389.pdf_render'
-version '1.0-SNAPSHOT'
+group = 'jp.espresso3389.pdf_render'
+version = '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '2.1.0'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:8.9.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -25,14 +25,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    if (project.android.hasProperty("namespace")) {
-        namespace("jp.espresso3389.pdf_render")
-    }
-    
-    compileSdkVersion 31
+    namespace 'jp.espresso3389.pdf_render'
+    compileSdk 36
      
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -43,13 +40,16 @@ android {
         }
     }
     defaultConfig {
-        minSdkVersion 21
+        minSdk 21
     }
-    lintOptions {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    lint {
         disable 'InvalidPackage'
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

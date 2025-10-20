@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
-import 'pdf_render_platform_interface.dart';
 import "../utils/ffi_wrapper.dart";
+import 'pdf_render_platform_interface.dart';
 
 /// Handles PDF document loaded on memory.
 abstract class PdfDocument {
@@ -57,7 +57,7 @@ abstract class PdfDocument {
   Future<PdfPage> getPage(int pageNumber);
 
   @override
-  bool operator ==(dynamic other);
+  bool operator ==(Object other);
 
   @override
   int get hashCode;
@@ -105,7 +105,7 @@ abstract class PdfPage {
   });
 
   @override
-  bool operator ==(dynamic other) =>
+  bool operator ==(Object other) =>
       other is PdfPage &&
       other.document == document &&
       other.pageNumber == pageNumber;

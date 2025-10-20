@@ -3,10 +3,9 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/services.dart';
 
-import 'utils/ffi_wrapper.dart';
-
 import 'interfaces/pdf_render.dart';
 import 'interfaces/pdf_render_platform_interface.dart';
+import 'utils/ffi_wrapper.dart';
 
 const MethodChannel _channel = MethodChannel('pdf_render');
 
@@ -63,23 +62,15 @@ class PdfDocumentMethodChannel extends PdfDocument {
   final List<PdfPage?> _pages;
 
   PdfDocumentMethodChannel._({
-    required String sourceName,
+    required super.sourceName,
     required this.docId,
-    required int pageCount,
-    required int verMajor,
-    required int verMinor,
-    required bool isEncrypted,
-    required bool allowsCopying,
-    required bool allowsPrinting,
-  })  : _pages = List<PdfPage?>.filled(pageCount, null),
-        super(
-            sourceName: sourceName,
-            pageCount: pageCount,
-            verMajor: verMajor,
-            verMinor: verMinor,
-            isEncrypted: isEncrypted,
-            allowsCopying: allowsCopying,
-            allowsPrinting: allowsPrinting);
+    required super.pageCount,
+    required super.verMajor,
+    required super.verMinor,
+    required super.isEncrypted,
+    required super.allowsCopying,
+    required super.allowsPrinting,
+  })  : _pages = List<PdfPage?>.filled(pageCount, null);
 
   @override
   Future<void> dispose() async {
@@ -107,7 +98,7 @@ class PdfDocumentMethodChannel extends PdfDocument {
   }
 
   @override
-  bool operator ==(dynamic other) =>
+  bool operator ==(Object other) =>
       other is PdfDocumentMethodChannel && other.docId == docId;
 
   @override
@@ -120,15 +111,10 @@ class PdfDocumentMethodChannel extends PdfDocument {
 /// Handles a PDF page in [PDFDocument].
 class PdfPageMethodChannel extends PdfPage {
   PdfPageMethodChannel._(
-      {required PdfDocumentMethodChannel document,
-      required int pageNumber,
-      required double width,
-      required double height})
-      : super(
-            document: document,
-            pageNumber: pageNumber,
-            width: width,
-            height: height);
+      {required PdfDocumentMethodChannel super.document,
+      required super.pageNumber,
+      required super.width,
+      required super.height});
 
   @override
   Future<PdfPageImage> render({
@@ -156,7 +142,7 @@ class PdfPageMethodChannel extends PdfPage {
   }
 
   @override
-  bool operator ==(dynamic other) =>
+  bool operator ==(Object other) =>
       other is PdfPageMethodChannel &&
       other.document == document &&
       other.pageNumber == pageNumber;
@@ -174,29 +160,19 @@ class PdfPageImageMethodChannel extends PdfPageImage {
   ui.Image? _imageCached;
 
   PdfPageImageMethodChannel._(
-      {required int pageNumber,
-      required int x,
-      required int y,
-      required int width,
-      required int height,
-      required double fullWidth,
-      required double fullHeight,
-      required double pageWidth,
-      required double pageHeight,
+      {required super.pageNumber,
+      required super.x,
+      required super.y,
+      required super.width,
+      required super.height,
+      required super.fullWidth,
+      required super.fullHeight,
+      required super.pageWidth,
+      required super.pageHeight,
       required Uint8List pixels,
       Pointer<Uint8>? buffer})
       : _pixels = pixels,
-        _buffer = buffer,
-        super(
-            pageNumber: pageNumber,
-            x: x,
-            y: y,
-            width: width,
-            height: height,
-            fullWidth: fullWidth,
-            fullHeight: fullHeight,
-            pageWidth: pageWidth,
-            pageHeight: pageHeight);
+        _buffer = buffer;
 
   /// RGBA pixels in byte array.
   @override
@@ -318,10 +294,9 @@ class PdfPageImageTextureMethodChannel extends PdfPageImageTexture {
   int get hashCode => _doc.docId ^ pageNumber;
 
   PdfPageImageTextureMethodChannel._(
-      {required PdfDocument pdfDocument,
-      required int pageNumber,
-      required int texId})
-      : super(pdfDocument: pdfDocument, pageNumber: pageNumber, texId: texId);
+      {required super.pdfDocument,
+      required super.pageNumber,
+      required super.texId});
 
   /// Release the object.
   @override

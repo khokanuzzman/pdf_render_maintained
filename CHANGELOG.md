@@ -1,3 +1,33 @@
+## 1.5.0 (Maintained Fork)
+
+**This is a maintained fork of the original pdf_render package by espresso3389**
+
+### Breaking Changes
+- Package name changed from `pdf_render` to `pdf_render_maintained`
+- Android package identifier changed to `com.khokanuzzman.pdf_render_maintained`
+
+### Updates
+- Updated all dependencies to latest versions
+- Fixed compatibility with Flutter 3.0+ and Dart 3.0+
+- Updated SDK constraints to `>=3.0.0 <4.0.0`
+- Fixed linter errors and code quality issues
+- Updated example project to use new package name
+- Added comprehensive documentation with proper attribution
+
+### Dependencies Updated
+- `js: ^0.7.2` (from ^0.6.7)
+- `flutter_lints: ^6.0.0` (from ^4.0.0)
+- `flutter_cache_manager: ^3.4.1` (example project)
+
+### Attribution
+This package is based on the excellent work by [espresso3389](https://github.com/espresso3389) and the original [pdf_render](https://pub.dev/packages/pdf_render) package. We maintain this fork to keep the package alive for the Flutter community.
+
+## 1.4.13 (Original Package)
+
+- Modernize the Android toolchain: migrate to the Gradle plugins DSL, update to AGP 8.9.1, Kotlin 2.1.0, and compileSdk 36.
+- Adopt Flutter's declarative plugin loader and refresh Gradle wrapper/JVM settings for compatibility with Flutter 3.35.
+- Refresh dependencies via `flutter pub upgrade` to restore Android build success on current Flutter stable.
+
 ## 1.4.12
 
 - Merge PR #148 to handle click outside page view

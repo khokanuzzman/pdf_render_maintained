@@ -1,12 +1,13 @@
-name: pdf_render
-description: A plugin that provides you with intermediate PDF rendering APIs and
-  easy-to-use Flutter Widgets.
-version: 1.4.12
-homepage: https://github.com/espresso3389/flutter_pdf_render
+name: pdf_render_maintained
+description: A maintained fork of pdf_render plugin that provides you with intermediate PDF rendering APIs and easy-to-use Flutter Widgets. Inspired by and based on the original pdf_render package by espresso3389.
+version: 1.5.0
+homepage: https://github.com/khokanuzzman/pdf_render_maintained
+repository: https://github.com/khokanuzzman/pdf_render_maintained
+issue_tracker: https://github.com/khokanuzzman/pdf_render_maintained/issues
 
 environment:
-  sdk: ">=2.17.0 <4.0.0"
-  flutter: ">=1.20.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   collection: ^1.18.0
@@ -14,12 +15,12 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  js: ^0.6.7
+  js: ^0.7.2
   plugin_platform_interface: ^2.1.8
   vector_math: ^2.1.4
 
 dev_dependencies:
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 
@@ -34,7 +35,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: jp.espresso3389.pdf_render
+        package: com.khokanuzzman.pdf_render_maintained
         pluginClass: PdfRenderPlugin
       ios:
         pluginClass: PdfRenderPlugin

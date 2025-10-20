@@ -4,8 +4,8 @@ import 'package:flutter/foundation.dart'
     show kIsWeb; // for checking whether running on Web or not
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:pdf_render/pdf_render.dart';
-import 'package:pdf_render/pdf_render_widgets.dart';
+import 'package:pdf_render_maintained/pdf_render.dart';
+import 'package:pdf_render_maintained/pdf_render_widgets.dart';
 
 void main(List<String> args) => runApp(const MyApp());
 

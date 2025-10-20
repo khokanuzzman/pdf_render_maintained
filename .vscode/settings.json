@@ -38,5 +38,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
-  }
+  },
+  "java.configuration.updateBuildConfiguration": "automatic"
 }
