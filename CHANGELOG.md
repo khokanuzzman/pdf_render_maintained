@@ -1,3 +1,8 @@
+## 1.5.1 (Maintained Fork)
+
+- Added keywords for better discoverability on pub.dev
+- Improved package description with searchable terms
+
 ## 1.5.0 (Maintained Fork)
 
 **This is a maintained fork of the original pdf_render package by espresso3389**
