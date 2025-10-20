@@ -1,9 +1,28 @@
 name: pdf_render_maintained
-description: A maintained fork of pdf_render plugin that provides you with intermediate PDF rendering APIs and easy-to-use Flutter Widgets. Inspired by and based on the original pdf_render package by espresso3389.
+description: A maintained fork of pdf_render plugin that provides PDF rendering APIs and Flutter widgets for iOS, Android, macOS, and Web. Features PDF viewer, document rendering, cross-platform support, and modern Flutter compatibility.
 version: 1.5.0
 homepage: https://github.com/khokanuzzman/pdf_render_maintained
 repository: https://github.com/khokanuzzman/pdf_render_maintained
 issue_tracker: https://github.com/khokanuzzman/pdf_render_maintained/issues
+
+# Keywords for better discoverability on pub.dev
+topics:
+  - pdf
+  - pdf-viewer
+  - pdf-render
+  - flutter
+  - dart
+  - cross-platform
+  - mobile
+  - web
+  - ios
+  - android
+  - macos
+  - pdf-rendering
+  - document-viewer
+  - pdf-reader
+  - maintained
+  - fork
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
