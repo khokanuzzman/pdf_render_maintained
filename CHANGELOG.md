@@ -1,3 +1,9 @@
+## 1.5.2 (Maintained Fork)
+
+- ✅ **Final Publishing**: Package successfully published to pub.dev
+- ✅ **Complete Documentation**: All guides and documentation updated
+- ✅ **Version Update**: Bumped to 1.5.2 for final release
+
 ## 1.5.1 (Maintained Fork)
 
 - ✅ **WASM Compatibility**: Fixed `dart:ffi` imports with conditional exports for web/WASM compatibility
