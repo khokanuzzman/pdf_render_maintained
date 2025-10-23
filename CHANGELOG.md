@@ -1,7 +1,15 @@
 ## 1.5.1 (Maintained Fork)
 
-- Added keywords for better discoverability on pub.dev
-- Improved package description with searchable terms
+- ✅ **WASM Compatibility**: Fixed `dart:ffi` imports with conditional exports for web/WASM compatibility
+- ✅ **Gradle 8.11.1 Support**: Updated Gradle wrapper to support modern Android builds
+- ✅ **Dependency Updates**: Updated to latest versions (collection ^1.19.1, vector_math ^2.2.0)
+- ✅ **Removed Discontinued Package**: Removed `js` package dependency
+- ✅ **Static Analysis**: Fixed all linting errors and warnings
+- ✅ **Platform Interface**: Updated to use conditional imports for web/WASM
+- ✅ **Android Testing**: Verified working on real devices (Pixel 6a) and emulators
+- ✅ **Build Compatibility**: All platforms (iOS, Android, macOS) build successfully
+- ✅ **Code Quality**: Improved code structure and maintainability
+- ✅ **Documentation**: Updated README with latest features and improvements
 
 ## 1.5.0 (Maintained Fork)
 

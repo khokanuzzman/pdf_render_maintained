@@ -1,6 +1,4 @@
 import 'dart:typed_data';
-import 'dart:html' as html;
-import 'dart:js_util' as js_util;
 
 /// [Uint8] is not defined for Flutter Web. This is just a dummy definition.
 class Uint8 {}
@@ -22,19 +20,22 @@ extension Uint8Pointer on Pointer<Uint8> {
 
 int _fakeAddress = 0;
 
+// Storage for buffers using a simple Map
+final Map<int, Uint8List> _bufferStorage = {};
+
 /// Associate an address with the specified buffer and return the address.
 int pinBufferByFakeAddress(Uint8List buffer) {
-  js_util.setProperty(html.window, 'pdf_render_buffer_$_fakeAddress', buffer);
-  return _fakeAddress++;
+  final address = _fakeAddress++;
+  _bufferStorage[address] = buffer;
+  return address;
 }
 
 /// Get the associated buffer for the address.
 Uint8List getBufferByFakeAddress(int address) {
-  return js_util.getProperty(html.window, 'pdf_render_buffer_$address')
-      as Uint8List;
+  return _bufferStorage[address]!;
 }
 
 /// Release the associated buffer for the address.
 void unpinBufferByFakeAddress(int address) {
-  js_util.setProperty(html.window, 'pdf_render_buffer_$address', null);
+  _bufferStorage.remove(address);
 }

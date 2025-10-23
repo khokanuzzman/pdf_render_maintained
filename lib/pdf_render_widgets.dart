@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as math64;
 
 import 'pdf_render.dart';
-import 'src/wrappers/pdf_texture.dart';
 import 'src/interfaces/interactive_viewer.dart' as iv;
+import 'src/wrappers/pdf_texture.dart';
 
 /// Function definition to build widget tree for a PDF document.
 ///
@@ -170,13 +170,13 @@ class PdfDocumentLoader extends StatefulWidget {
   /// or [PdfDocumentLoader.openData] in normal case.
   /// If you already have [PdfDocument], you can use the method.
   PdfDocumentLoader({
-    Key? key,
+    super.key,
     required this.doc,
     this.documentBuilder,
     this.pageNumber,
     this.pageBuilder,
     this.onError,
-  }) : super(key: key);
+  });
 
   @override
   PdfDocumentLoaderState createState() => PdfDocumentLoaderState();
@@ -289,8 +289,7 @@ class PdfPageView extends StatefulWidget {
   final PdfPageBuilder? pageBuilder;
 
   const PdfPageView(
-      {Key? key, this.pdfDocument, required this.pageNumber, this.pageBuilder})
-      : super(key: key);
+      {super.key, this.pdfDocument, required this.pageNumber, this.pageBuilder});
 
   @override
   PdfPageViewState createState() => PdfPageViewState();
@@ -974,12 +973,12 @@ class PdfViewer extends StatefulWidget {
   Future<PdfDocument?> get _doc => _docCache.getValue();
 
   PdfViewer({
-    Key? key,
+    super.key,
     required this.doc,
     this.viewerController,
     this.params,
     this.onError,
-  }) : super(key: key);
+  });
 
   /// Open a file.
   factory PdfViewer.openFile(

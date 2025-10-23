@@ -1,21 +1,12 @@
-@JS()
-library pdf.js;
-
 import 'dart:js_util';
 import 'dart:typed_data';
 
-import 'package:js/js.dart';
-
 import '../wrappers/html.dart';
 
-@JS('pdfjsLib.getDocument')
 external _PDFDocumentLoadingTask _pdfjsGetDocument(dynamic data);
 
-@JS('pdfRenderOptions')
 external Object _pdfRenderOptions;
 
-@JS()
-@anonymous
 class _PDFDocumentLoadingTask {
   external Object get promise;
 }
@@ -27,7 +18,7 @@ Map<String, dynamic> _getParams(Map<String, dynamic> jsParams) {
   }..addAll(jsParams);
   final otherParams = getProperty(_pdfRenderOptions, 'params');
   if (otherParams != null) {
-    params.addAll(otherParams);
+    params.addAll(otherParams as Map<String, dynamic>);
   }
   return params;
 }
@@ -43,16 +34,12 @@ Future<PdfjsDocument> pdfjsGetDocument(String url) =>
 Future<PdfjsDocument> pdfjsGetDocumentFromData(ByteBuffer data) =>
     _pdfjsGetDocumentJsParams({'data': data});
 
-@JS()
-@anonymous
 class PdfjsDocument {
   external Object getPage(int pageNumber);
   external int get numPages;
   external void destroy();
 }
 
-@JS()
-@anonymous
 class PdfjsPage {
   external PdfjsViewport getViewport(PdfjsViewportParams params);
 
@@ -62,8 +49,6 @@ class PdfjsPage {
   external List<double> get view;
 }
 
-@JS()
-@anonymous
 class PdfjsViewportParams {
   external double get scale;
   external set scale(double scale);
@@ -84,7 +69,6 @@ class PdfjsViewportParams {
       bool dontFlip = false});
 }
 
-@JS('PageViewport')
 class PdfjsViewport {
   external List<double> get viewBox;
   external set viewBox(List<double> viewBox);
@@ -111,8 +95,6 @@ class PdfjsViewport {
   external set transform(List<double>? m);
 }
 
-@JS()
-@anonymous
 class PdfjsRenderContext {
   external CanvasRenderingContext2D get canvasContext;
   external set canvasContext(CanvasRenderingContext2D ctx);
@@ -143,8 +125,6 @@ class PdfjsRenderContext {
       dynamic background});
 }
 
-@anonymous
-@JS()
 class PdfjsRender {
   external Future<void> get promise;
 }

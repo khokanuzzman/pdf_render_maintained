@@ -14,6 +14,9 @@ This package is a **maintained fork** of the original [pdf_render](https://pub.d
 - ✅ **Compatibility** with latest Flutter SDK (3.0+)
 - ✅ **Same API** - drop-in replacement for the original package
 - ✅ **All platforms** supported (iOS, Android, macOS, Web)
+- ✅ **WASM compatibility** improvements
+- ✅ **Gradle 8.11.1** support for modern Android builds
+- ✅ **Latest dependencies** (collection ^1.19.1, vector_math ^2.2.0)
 
 ### Original Package Attribution
 
@@ -38,7 +41,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  pdf_render_maintained: ^1.5.0
+  pdf_render_maintained: ^1.5.1
 ```
 
 Then run `flutter pub get`.
@@ -157,7 +160,7 @@ And update your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  pdf_render_maintained: ^1.5.0  # Instead of pdf_render: ^1.4.12
+  pdf_render_maintained: ^1.5.1  # Instead of pdf_render: ^1.4.12
 ```
 
 ## Contributing
