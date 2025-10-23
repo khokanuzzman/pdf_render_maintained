@@ -1,3 +1,9 @@
+## 1.5.3 (Maintained Fork)
+
+- ✅ **Swift Package Manager Support**: Added SPM support for macOS
+- ✅ **Package.swift**: Created proper Swift Package Manager configuration
+- ✅ **macOS SPM**: Full Swift Package Manager compatibility for macOS
+
 ## 1.5.2 (Maintained Fork)
 
 - ✅ **Final Publishing**: Package successfully published to pub.dev
