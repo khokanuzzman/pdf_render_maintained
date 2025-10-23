@@ -16,6 +16,7 @@ This package is a **maintained fork** of the original [pdf_render](https://pub.d
 - ✅ **All platforms** supported (iOS, Android, macOS, Web)
 - ✅ **WASM compatibility** improvements
 - ✅ **Gradle 8.11.1** support for modern Android builds
+- ✅ **Swift Package Manager** support for macOS
 - ✅ **Latest dependencies** (collection ^1.19.1, vector_math ^2.2.0)
 
 ### Original Package Attribution
@@ -34,6 +35,8 @@ This package is based on the original work by [espresso3389](https://github.com/
 - 🔧 **Flexible APIs**: Both widget-based and low-level rendering APIs
 - 📄 **Multiple sources**: Load from assets, files, or memory data
 - 🎯 **Interactive viewing**: Pinch-zoom, pan, and navigation controls
+- 🍎 **Swift Package Manager**: Full SPM support for macOS development
+- 🏗️ **Modern Build Tools**: Gradle 8.11.1, latest dependencies
 
 ## Installation
 
@@ -41,10 +44,38 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  pdf_render_maintained: ^1.5.1
+  pdf_render_maintained: ^1.5.3
 ```
 
 Then run `flutter pub get`.
+
+### Platform-Specific Setup
+
+#### macOS Swift Package Manager Support
+
+This package includes full Swift Package Manager (SPM) support for macOS development:
+
+- ✅ **Package.swift**: Complete SPM configuration
+- ✅ **Automatic Integration**: Flutter handles SPM integration automatically
+- ✅ **No Additional Setup**: Works out of the box with Flutter projects
+- ✅ **Modern Tooling**: Compatible with latest Xcode and Swift tools
+
+**Note**: For most Flutter projects, no additional setup is required. Flutter's plugin system will automatically handle the SPM integration.
+
+#### Android Setup
+
+The package supports modern Android development with:
+- ✅ **Gradle 8.11.1**: Latest Gradle version support
+- ✅ **Kotlin 2.1.0**: Modern Kotlin support
+- ✅ **API 36**: Latest Android API support
+- ✅ **Automatic Integration**: No additional setup required
+
+#### iOS Setup
+
+Standard iOS development with:
+- ✅ **Swift Support**: Full Swift compatibility
+- ✅ **iOS 10.0+**: Wide device compatibility
+- ✅ **Automatic Integration**: No additional setup required
 
 ### Web Setup
 
@@ -160,7 +191,7 @@ And update your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  pdf_render_maintained: ^1.5.1  # Instead of pdf_render: ^1.4.12
+  pdf_render_maintained: ^1.5.3  # Instead of pdf_render: ^1.4.12
 ```
 
 ## Contributing
